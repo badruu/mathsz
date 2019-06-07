@@ -1,0 +1,36 @@
+{% extends 'maths/base.html' %}
+
+{% block content %}
+{% for topics in maths %}
+<div class="card mb-3" id="hood-img">
+    <div class="row">
+        <div class="col-md-10">
+            <!-- <img src="{{ business.hood_id.image.url }}" class="rounded-circle article-img" > -->
+            <div class="card-body">
+                <img src="{{ topics.image.url }}" class="rounded-circle article-img" >
+                <h2>
+                    Instructor: <hr>
+                    {{topics.instructor}}
+                </h3>
+                <h3 class="card-title">{{topics.topic}} <small>{{topics.sub_topic}}</small> </h3>
+                <p class="card-text"><small class="text-muted">Last updated {{topics.timestamp|timesince}}</small></p><br>
+                <h2>
+                    Content
+                </h2><hr>
+                <p class="card-text"><small>{{topics.description}}</small></p><br>
+            </div>
+        </div>
+        <!-- <div class="col-md-4"> -->
+            <!-- <h3>Population: {{business.hood_id.population}}</h3> -->
+            <!-- <p class="card-text"><small>Description: {{business.hood_id.description}}</small></p><br> -->
+            <!-- <span> -->
+                <!-- Admin name: {{business.hood_id.admin}} -->
+            <!-- </span> -->
+            <!-- <p> -->
+                <!-- Businesses in this area: {{businesses|length}} -->
+            <!-- </p> -->
+        <!-- </div> -->
+    </div>
+</div>
+{% endfor %}
+{% endblock content %}
