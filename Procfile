@@ -1,0 +1,1 @@
+web: gunicorn mathematics.wsgi --log-file -
